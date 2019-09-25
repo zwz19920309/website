@@ -31,6 +31,7 @@ class DBHelper {
         channel: params.channel, // 同一个标题可能有多个不同的频道
         status: params.status, // 当前页面监控状态 0 没有监控1  正在监控  2 监控出问题了，创建页面默认就开始监控
         cates: params.cates, // 分类 默认'文章'
+        ctype: params.ctype, // 类型 文字，JSON,JSONP,
         encoding: params.encoding, // 默认 'UTF-8'
         group: params.group, //  默认 '1',
         headers: params.headers, // 头部信息
@@ -74,6 +75,7 @@ class DBHelper {
       channel: params.channel, // 同一个标题可能有多个不同的频道
       status: params.status, // 当前页面监控状态 0 没有监控1  正在监控  2 监控出问题了，创建页面默认就开始监控
       cates: params.cates, // 分类 默认'文章'
+      ctype: params.ctype, // 类型 文字，JSON,JSONP,
       encoding: params.encoding, // 默认 'UTF-8'
       group: params.group, //  默认 '1',
       headers: params.headers, // 头部信息
