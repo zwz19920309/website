@@ -32,6 +32,11 @@ const getPageList = async (params) => {
   return res
 }
 
+const getPageNewListAll = async (params) => {
+  let datas = await DbHelper.getPageNewListAll(params)
+  return datas
+}
+
 /**
   * 编辑监控页面
   * @method getCatesList
@@ -59,5 +64,6 @@ module.exports = {
   getPageList,
   deletePageNew,
   editPageNew,
-  findPageNewById
+  findPageNewById,
+  getPageNewListAll
 }
