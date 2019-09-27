@@ -44,7 +44,8 @@ class DBHelper {
         priority: params.priority, // 页面优先级
         foreign: params.foreign, // 是否外网
         updateat: params.updateat, // 更新时间
-        extra: params.extra // 额外
+        extra: params.extra, // 额外
+        followlink: params.followlink // 默认抓取链接内容
       }])
     return rows
   }
@@ -98,7 +99,8 @@ class DBHelper {
       priority: params.priority, // 页面优先级
       foreign: params.foreign, // 是否外网
       updateat: params.updateat, // 更新时间
-      extra: params.extra // 额外
+      extra: params.extra, // 额外
+      followlink: params.followlink // 默认抓取链接内容
     }, params.id])
     return rows
   }
