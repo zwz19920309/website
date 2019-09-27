@@ -60,6 +60,11 @@ class DBHelper {
     return rows
   }
 
+  static async getPageNewListAllByStatus(params) { // 获取网页列表
+    let [rows] = await DataDb.query('SELECT * FROM  page_new where status = ?', [params.status])
+    return rows
+  }
+
   static async deletePageNew(params) { // 删除网页
     let [rows] = await DataDb.query('DELETE FROM page_new WHERE id = ?', [params.id])
     return rows

@@ -32,14 +32,31 @@ const getPageList = async (params) => {
   return res
 }
 
+/**
+  * 获取所有监控页面列表
+  * @method getPageNewListAll
+  * @param  {object} params 参数
+  * @return {object} 修改结果
+ */
 const getPageNewListAll = async (params) => {
   let datas = await DbHelper.getPageNewListAll(params)
   return datas
 }
 
 /**
+  * 获取所有监控页面列表
+  * @method getPageNewListAllByStatus
+  * @param  {object} params 参数
+  * @return {object} 修改结果
+ */
+const getPageNewListAllByStatus = async (params) => {
+  let datas = await DbHelper.getPageNewListAllByStatus(params)
+  return datas
+}
+
+/**
   * 编辑监控页面
-  * @method getCatesList
+  * @method editPageNew
   * @param  {object} params 参数
   * @return {object} 修改结果
  */
@@ -50,7 +67,7 @@ const editPageNew = async (params) => {
 
 /**
   * 根据id获取监控页面
-  * @method getCatesList
+  * @method findPageNewById
   * @param  {object} params 参数
   * @return {object} 修改结果
  */
@@ -65,5 +82,6 @@ module.exports = {
   deletePageNew,
   editPageNew,
   findPageNewById,
-  getPageNewListAll
+  getPageNewListAll,
+  getPageNewListAllByStatus
 }

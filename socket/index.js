@@ -24,7 +24,8 @@ sock.on('message', function (data) {
 
 async function sendDatas(socket) {
   try {
-    let dataList = await pageService.getPageNewListAll({})
+    let dataList = await pageService.getPageNewListAllByStatus({ status: 1 })
+    console.log('@@@@@dataList.length: ', dataList.length)
     for (let data of dataList) {
       ++timer
       let spiderstr = await spiderService.getSpiderInfo(data)
