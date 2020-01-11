@@ -1,17 +1,15 @@
 {
   "apps": [
     {
-      "name": "ant-help-center",
-      "script": "./bin/www", //启动脚本
+      "name": "website",
+      "script": "node app.js",
       "env": {
         "COMMON_VARIABLE": "true"
       },
-      // 测试服务器
       "env_development": {
         "NODE_ENV": "development",
         "PORT": 8087
       },
-      // 生产环境
       "env_production": {
         "NODE_ENV": "production",
         "PORT": 8087
@@ -19,12 +17,11 @@
     }
   ],
   "deploy": {
-    // 生产环境
     "production": {
-      "user": "root", //Nginx服务器上的username
+      "user": "root",
       "host": [
-        "xxx.xxx.xxx.xxx"
-      ], // 服务器地址
+        "123.207.244.188"
+      ],
       "port": "22",
       "ref": "origin/master", //从指定的分支拉取代码
       "repo": "git@gitee.com:xxx/xxxx.git", // 使用
