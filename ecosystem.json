@@ -1,0 +1,57 @@
+{
+  "apps": [
+    {
+      "name": "ant-help-center",
+      "script": "./bin/www", //启动脚本
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      // 测试服务器
+      "env_development": {
+        "NODE_ENV": "development",
+        "PORT": 8087
+      },
+      // 生产环境
+      "env_production": {
+        "NODE_ENV": "production",
+        "PORT": 8087
+      }
+    }
+  ],
+  "deploy": {
+    // 生产环境
+    "production": {
+      "user": "root", //Nginx服务器上的username
+      "host": [
+        "xxx.xxx.xxx.xxx"
+      ], // 服务器地址
+      "port": "22",
+      "ref": "origin/master", //从指定的分支拉取代码
+      "repo": "git@gitee.com:xxx/xxxx.git", // 使用
+      "path": "/www/website/production", //发布到服务器指定的目录下
+      "ssh_options": "StrictHostKeyChecking=no",
+      //构建在发布
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    // 测试环境
+    "development": {
+      "user": "root", //Nginx服务器上的username
+      "host": [
+        "xxx.xxx.xxx.xxx"
+      ], // 服务器地址
+      "port": "22",
+      "ref": "origin/master", //从指定的分支拉取代码
+      "repo": "git@gitee.com:xxx/xxxx.git",
+      "path": "/www/website/development", //发布到服务器指定的目录下
+      "ssh_options": "StrictHostKeyChecking=no",
+      //构建在发布
+      "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env development",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  }
+}
